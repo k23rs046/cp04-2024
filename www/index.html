@@ -163,7 +163,8 @@
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
-        
+        $("#btnB").prop("disabled", true);
+       
     }
 
     // Alarmの処理
@@ -195,7 +196,7 @@
 
     // ButtonCがクリックされた時の処理
     function btnCClick(e){
-        alarm();
+       // alarm();
         active = false; 
         period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
          $("#time").html("経過時間： 0");
