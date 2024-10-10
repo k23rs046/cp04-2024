@@ -43,6 +43,7 @@
     #btnA {
         font-size: 20px;
         position:absolute; top:380px; left:2%; width:43%; height:60px; 
+        background-color: yellow;
     }
     
     #btnB {
@@ -68,6 +69,7 @@
     input[type=number] {text-align: right;}
     body{
         background-color: skyblue;
+        
     }
     button{
         color: blue;
