@@ -38,6 +38,9 @@
         $('#btnC').click(function(e) {
             btnCClick(e);
         });
+        $('#btnS').click(function(e) {
+            btnCClick(e);
+        });
         init();
     });
     
@@ -166,6 +169,7 @@
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
+        $('#btnS').prop('disabled', false);
       //  $("#btnB").prop("disabled", true);
         btnCClick(null);
     }
@@ -175,7 +179,7 @@
        var canvas = $("#mycanvas")[0];
        var ctx = canvas.getContext("2d");
        var img = new Image();
-       img.src = "ksuisbg.gif";      
+       img.src = "space01_sun.png";      
        img.onload = function() {    
             ctx.drawImage(img, 0, 0, 300, 300);
             };
@@ -183,7 +187,7 @@
             var audio = new Audio();
             audio.src = "pin.wav";
             audio.play();
- 
+   
  
        
        
@@ -212,6 +216,23 @@
         $("#remain").html("残り時間： " + m+"分"+s+"秒");
        
     }
+    $(function() {
+        $('#btnS').click(function(e) {
+            btnSClick(e);
+        });
+        init();
+    });
+ 
+    function btnSClick(e) {
+        var colors = ["#6F5AF0","#FF81F3","#F8FA9F","#FA5A0F","#B0F5AB","#A2A6F7"];
+        var randomss = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.backgroundColor = randomss;
+         
+    }
+    function init(){
+        $('#btnS').prop('disabled',false);
+    }
+ 
    
  
     // 繰り返し実行する処理
@@ -227,7 +248,10 @@
        if(rest<=0){
            active=false
            alarm();
+           
        }
+        
+ 
        
        
     }
@@ -244,9 +268,9 @@
     <div id="time">Time</div>
     <button id="btnA">Start</button>  
     <button id="btnB">Stop</button>  
-    <button id="btnC">Set</button>  
+    <button id="btnC">Set</button> 
+    <button id="btnS">change</button>   
     <input type="number" id="minute" value=0 >
     <input type="number" id="second" value=15>
 </body>
 </html>
- 
